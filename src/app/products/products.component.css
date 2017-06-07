@@ -2,4 +2,10 @@
   padding:20px;
   border: groove 2px;
   border-color: darkgrey;
+  height: 400px;
+  overflow-y: scroll;
+}
+
+#container {
+  margin: 40px;
 }
