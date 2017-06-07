@@ -1,17 +1,17 @@
-<h2>Products </h2>
-<div>
-  <div class="container-fluid" id="container">
-    <div class="row" id="sort">
-      <form class="form-control pull-right">
+ <div class="container-fluid" id="container">
+   <h2>Products </h2>
+   <hr class="break">
+    <div class="row" id="sort-row">
+      <form class="form-group-sm" id="sort">
         <label for="relevance">sort: </label>
         <input type="radio" id="relevance" name="relevance">
       </form>
     </div>
+   <hr class="break">
     <div class="row" id="products">
       <div class="col-md-4" *ngFor="let product of products">
         <app-product [product]="product"></app-product>
       </div>
     </div>
   </div>
-</div>
 

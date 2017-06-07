@@ -32,9 +32,11 @@
   <div>
     <h3>Price </h3>
     <div class="form-group">
-      <input class="input-sm" type="text" name="min" placeholder="Min" inputmode="numeric">
-      <button class="btn btn-default" type="button">GO</button>
-      <input type="range" name="pricemax" min="1" max="100" step="1">
+      <input class="input-sm" type="text"
+             name="min" placeholder="Min"
+             inputmode="numeric" #inputPrice (input)="price = $event.target.value" value="{{price}}">
+      <button class="btn btn-default" type="button" (click)="onPriceChange()">GO</button>
+      <input type="range" name="{{minPrice}}" min="1" max="{{maxPrice}}" step="1" (input)="price = $event.target.value" value="{{price}}">
     </div>
   </div>
 </div>

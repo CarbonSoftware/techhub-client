@@ -1,0 +1,7 @@
+#ad {
+  border: groove 4px;
+  border-color: lightblue;
+  margin: 30px;
+  max-height: 300px;
+  max-width: 150px;
+}

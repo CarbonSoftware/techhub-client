@@ -9,6 +9,7 @@ import { SearchPanelComponent } from './search-panel/search-panel.component';
 import { AuthenticationComponent } from './authentication/authentication.component';
 import { ProductsComponent } from './products/products.component';
 import { ProductComponent } from './products/product/product.component';
+import { AdComponent } from './ad/ad.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { ProductComponent } from './products/product/product.component';
     SearchPanelComponent,
     AuthenticationComponent,
     ProductsComponent,
-    ProductComponent
+    ProductComponent,
+    AdComponent
   ],
   imports: [
     BrowserModule,
