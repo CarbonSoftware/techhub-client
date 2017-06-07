@@ -1,0 +1,13 @@
+#product {
+  text-align: center;
+  align-content: center;
+  padding: 10px;
+  margin: 5px;
+  border: 5px;
+  border-color: darkgrey;
+}
+
+#product-image {
+  max-height: 250px;
+  max-width: 200px;
+}
