@@ -4,7 +4,6 @@
   padding: 10px;
   margin: 5px;
   border: 5px;
-  background-color: rgba(200,201,198,0.86);
 }
 
 #product-image {
@@ -12,3 +11,22 @@
   max-width: 200px;
 }
 
+a, a:active, a:link, a:visited {
+  text-decoration: none;
+  text-decoration-line: none;
+  text-decoration-style: initial;
+  text-decoration-color: initial;
+  color: #0066c0;
+}
+
+.a-inline-block, .aok-inline-block {
+  display: inline-block;
+}
+
+.image {
+  width: auto;
+  height: auto;
+  max-width: 270px;
+  max-height: 200px;
+  vertical-align: middle;
+}

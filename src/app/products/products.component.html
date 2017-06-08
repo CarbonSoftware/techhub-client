@@ -4,11 +4,11 @@
     <div class="row" id="sort-row">
       <form class="form-group-sm" id="sort">
         <input type="radio" [(ngModel)]="sortType"  name="sort"
-               value="relevance" (click)="sort()"/><label>Relevance</label>
+               value="relevance" (click)="sort()"/><label>Relevance <span> </span></label>
         <input type="radio" [(ngModel)]="sortType" name="sort"
-               value="priceAscending" (click)="sort()"/><label>Price ascending</label>
+               value="priceAscending" (click)="sort()"/><label>Price ascending  </label>
         <input type="radio" [(ngModel)]="sortType" name="sort"
-               value="priceDescending" (click)="sort()"/><label>Price descending</label>
+               value="priceDescending" (click)="sort()"/><label>Price descending  </label>
       </form>
     </div>
    <hr class="break">

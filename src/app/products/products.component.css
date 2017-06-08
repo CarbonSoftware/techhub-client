@@ -1,17 +1,18 @@
 #products {
-  height: 400px;
+  height: 600px;
   overflow-y: scroll;
+  padding: 10px;
+  margin: 5px;
 }
 
 #container {
-  background-color: rgba(156,197,211,0.75);
   text-align: center;
-  border-left: groove ghostwhite 4px;
+  padding: 5px;
 }
 
 #sort-row {
   text-align: right;
-  padding-right: 10px;
+  margin-right: 10px;
 }
 
 .break{

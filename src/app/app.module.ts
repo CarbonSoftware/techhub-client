@@ -11,6 +11,7 @@ import { ProductsComponent } from './products/products.component';
 import { ProductComponent } from './products/product/product.component';
 import { AdComponent } from './ad/ad.component';
 import {ProductsService} from "./products/products.service";
+import { PromoComponent } from './header/promo/promo.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import {ProductsService} from "./products/products.service";
     AuthenticationComponent,
     ProductsComponent,
     ProductComponent,
-    AdComponent
+    AdComponent,
+    PromoComponent
   ],
   imports: [
     BrowserModule,

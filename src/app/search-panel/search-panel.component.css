@@ -1,7 +1,10 @@
 #sidepanel {
-  background-color: rgba(156,197,211,0.75);
+  background-color: rgb(249, 249, 255);
+  padding: 10px;
 }
 
 #input {
   width: 70px;
 }
+
+

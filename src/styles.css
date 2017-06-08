@@ -1,4 +1,15 @@
 /* You can add global styles to this file, and also import other style files */
 body {
-  background-color: rgba(9,154,227,0.50);
+  background-color: #fff;
+}
+
+hr {
+  display: block;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  margin-left: 10px;
+  margin-right: 10px;
+  border-style: solid;
+  border: 1px #c3c9cd solid;
+  border-radius: 10px;
 }
