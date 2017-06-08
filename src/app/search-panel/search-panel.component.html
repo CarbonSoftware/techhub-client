@@ -1,43 +1,49 @@
 <div class="container-fluid" id="sidepanel">
-  <h3>catagory </h3>
-  <ul>
-    <li><a role="button">Phones</a></li>
-    <li><a role="button">Laptops</a></li>
-  </ul>
-  <div>
-    <h3>Brands </h3>
-    <div class="form-group">
-      <div class="checkbox">
-        <label class="control-label">
-          <input type="checkbox">Label</label>
+  <form>
+    <fieldset class="form-group">
+      <legend>Caterories</legend>
+      <ul>
+        <li><a role="button">Phones</a></li>
+        <li><a role="button">Laptops</a></li>
+      </ul>
+    </fieldset>
+    <fieldset class="form-group">
+      <legend>Brands</legend>
+      <div class="form-group">
+        <div class="checkbox">
+          <label class="control-label">
+            <input type="checkbox">Label</label>
+        </div>
+        <div class="checkbox">
+          <label class="control-label">
+            <input type="checkbox">Label</label>
+        </div>
+        <div class="checkbox">
+          <label class="control-label">
+            <input type="checkbox">Label</label>
+        </div>
+        <div class="checkbox">
+          <label class="control-label">
+            <input type="checkbox">Label</label>
+        </div>
+        <div class="checkbox">
+          <label class="control-label">
+            <input type="checkbox">Label</label>
+        </div>
       </div>
-      <div class="checkbox">
-        <label class="control-label">
-          <input type="checkbox">Label</label>
-      </div>
-      <div class="checkbox">
-        <label class="control-label">
-          <input type="checkbox">Label</label>
-      </div>
-      <div class="checkbox">
-        <label class="control-label">
-          <input type="checkbox">Label</label>
-      </div>
-      <div class="checkbox">
-        <label class="control-label">
-          <input type="checkbox">Label</label>
-      </div>
-    </div>
-  </div>
-  <div>
-    <h3>Price </h3>
-    <div class="form-group">
-      <input class="input-sm" type="text"
-             name="min" placeholder="Min"
-             inputmode="numeric" #inputPrice (input)="price = $event.target.value" value="{{price}}">
-      <button class="btn btn-default" type="button" (click)="onPriceChange()">GO</button>
-      <input type="range" name="{{minPrice}}" min="1" max="{{maxPrice}}" step="1" (input)="price = $event.target.value" value="{{price}}">
-    </div>
-  </div>
+    </fieldset>
+    <fieldset class="form-group">
+      <legend>Price</legend>
+      <label>Enter max Price:</label>
+        <input class="input-sm" type="text"
+               name="min" placeholder="{{price}}"
+               inputmode="numeric"
+               (input)="price = $event.target.value"
+               id="input">
+        <button class="btn btn-default" type="button" (click)="onPriceChange()">GO</button>
+        <input type="range" name="{{minPrice}}" min="1" max="{{maxPrice}}" step="1"
+               (input)="price = $event.target.value" value="{{price}}">
+    </fieldset>
+  </form>
 </div>
 

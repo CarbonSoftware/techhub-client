@@ -1,6 +1,7 @@
 #sidepanel {
-  padding: 20px;
-  margin: 10px;
-  border-right: 5px;
-  border-right-color: darkgrey;
+  background-color: rgba(156,197,211,0.75);
+}
+
+#input {
+  width: 70px;
 }

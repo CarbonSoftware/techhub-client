@@ -3,8 +3,12 @@
    <hr class="break">
     <div class="row" id="sort-row">
       <form class="form-group-sm" id="sort">
-        <label for="relevance">sort: </label>
-        <input type="radio" id="relevance" name="relevance">
+        <input type="radio" [(ngModel)]="sortType"  name="relevance"
+               value="relevance" /><label>Relevance</label>
+        <input type="radio" [(ngModel)]="sortType" name="priceAscending"
+               value="priceAscending" (click)="sort(sortType)" /><label>Price ascending</label>
+        <input type="radio" [(ngModel)]="sortType" name="priceDescending"
+               value="priceDescending" /><label>Price descending</label>
       </form>
     </div>
    <hr class="break">

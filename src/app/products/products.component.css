@@ -1,15 +1,12 @@
 #products {
-  padding:20px;
   height: 400px;
   overflow-y: scroll;
 }
 
 #container {
-  background-color: aliceblue;
-  margin: 40px;
-  border: groove 2px;
-  border-color: darkgrey;
+  background-color: rgba(156,197,211,0.75);
   text-align: center;
+  border-left: groove ghostwhite 4px;
 }
 
 #sort-row {
