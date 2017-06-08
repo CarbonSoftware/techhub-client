@@ -1,13 +1,12 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, DoCheck, OnInit} from '@angular/core';
 import {product} from "./product.model";
-import {forEach} from "@angular/router/src/utils/collection";
 
 @Component({
   selector: 'app-products',
   templateUrl: './products.component.html',
   styleUrls: ['./products.component.css']
 })
-export class ProductsComponent implements OnInit {
+export class ProductsComponent implements OnInit, DoCheck {
   products: product[] = [
     new product('name', 'description of the product', 503, '../'),
     new product('second', 'description of the product', 534),
@@ -32,22 +31,27 @@ export class ProductsComponent implements OnInit {
 
   }
 
-  sort(sortType: string) {
-    if (sortType === 'relevance') {
+  sort() {
+    console.log(this.sortType);
+    if (this.sortType === 'relevance') {
 
-    }
-    if (sortType === 'priceAscending') {
+    }else if (this.sortType === 'priceAscending') {
       this.products.sort(function(a, b){
-        return parseFloat(a.price.toString()) - parseFloat(b.price.toString());
+        return a.price - b.price;
       })
-    }
-    if (sortType === 'priceDescending') {
+    }else if (this.sortType === 'priceDescending') {
 
+    } else {
+      console.log('error: ' + this.sortType + ' is not recognised');
     }
-    console.log('error: ' + sortType + 'is not recognised')
   }
 
   ngOnInit() {
+    this.sort();
+  }
+
+  ngDoCheck() {
+    this.sort();
   }
 
 }
