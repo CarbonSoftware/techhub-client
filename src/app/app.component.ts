@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'app works!';
+  navigation: string = 'buy';
+
+  onNavigate(nav) {
+    this.navigation = nav;
+  }
 }
