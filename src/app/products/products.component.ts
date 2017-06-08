@@ -23,11 +23,11 @@ export class ProductsComponent implements OnInit, DoCheck {
       this.products.sort();
     }else if (this.sortType === 'priceAscending') {
       this.products.sort(function(a, b){
-        return a.price - b.price
+        return b.price - a.price
       });
     }else if (this.sortType === 'priceDescending') {
       this.products.sort(function(a, b) {
-        return b.price - a.price
+        return a.price - b.price
       });
     } else {
       console.log('error: ' + this.sortType + ' is not recognised');

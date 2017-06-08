@@ -42,7 +42,7 @@
                inputmode="numeric"
                (input)="price = $event.target.value"
                id="input">
-        <button class="btn btn-default" type="button" (click)="onPriceChange()">GO</button>
+        <button class="btn btn-default" type="button" (click)="onsubmit()">GO</button>
         <input type="range" name="{{minPrice}}" min="1" max="{{maxPrice}}" step="1"
                (input)="price = $event.target.value" value="{{price}}">
     </fieldset>

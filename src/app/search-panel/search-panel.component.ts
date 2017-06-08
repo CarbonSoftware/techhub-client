@@ -16,8 +16,8 @@ export class SearchPanelComponent implements OnInit {
   ngOnInit() {
   }
 
-  onPriceChange() {
-
+  onsubmit() {
+    console.log(this.price);
   }
 
 }

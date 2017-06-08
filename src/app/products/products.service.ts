@@ -30,4 +30,9 @@ export class ProductsService {
       new product('16th', 'description of the product', 150, '../../../assets/img/samsung.jpg')
     ];
   }
+
+  sortByPrice() {
+
+  }
+
 }
