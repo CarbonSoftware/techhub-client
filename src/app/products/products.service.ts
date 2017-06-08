@@ -3,8 +3,11 @@ import {product} from "./product.model";
 
 @Injectable()
 export class ProductsService {
+    products: product[];
 
-  constructor() { }
+  constructor() {
+    this.products = this.getProducts();
+  }
 
   //return array of products from the server
   getProducts() {
@@ -31,7 +34,27 @@ export class ProductsService {
     ];
   }
 
-  sortByPrice() {
+  //make a GET Request to server to receive sorted list of products
+  sortByPrice(sortType: string): product[] {
+    console.log(sortType);
+    if (sortType === 'relevance') {
+      this.products.sort();
+    }else if (sortType === 'priceAscending') {
+      this.products.sort(function(a, b){
+        return b.price - a.price
+      });
+    }else if (sortType === 'priceDescending') {
+      this.products.sort(function(a, b) {
+        return a.price - b.price
+      });
+    } else {
+      console.log('error: ' + sortType + ' is not recognised');
+    }
+    return this.products;
+  }
+
+  //make a GET Request to server to receive items searched for
+  search() {
 
   }
 

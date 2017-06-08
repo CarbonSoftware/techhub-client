@@ -13,25 +13,20 @@ export class ProductsComponent implements OnInit, DoCheck {
 
   constructor(private productService: ProductsService) {
     //service will get products from database and inject them here
-    this.products = productService.getProducts();
+    this.getProducts();
 
   }
 
   sort() {
-    console.log(this.sortType);
-    if (this.sortType === 'relevance') {
-      this.products.sort();
-    }else if (this.sortType === 'priceAscending') {
-      this.products.sort(function(a, b){
-        return b.price - a.price
-      });
-    }else if (this.sortType === 'priceDescending') {
-      this.products.sort(function(a, b) {
-        return a.price - b.price
-      });
-    } else {
-      console.log('error: ' + this.sortType + ' is not recognised');
-    }
+    this.products = this.productService.sortByPrice(this.sortType);
+  }
+
+  search() {
+    this.productService.search();
+  }
+
+  getProducts() {
+    this.products = this.productService.getProducts();
   }
 
   ngOnInit() {
