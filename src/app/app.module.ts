@@ -10,6 +10,7 @@ import { AuthenticationComponent } from './authentication/authentication.compone
 import { ProductsComponent } from './products/products.component';
 import { ProductComponent } from './products/product/product.component';
 import { AdComponent } from './ad/ad.component';
+import {ProductsService} from "./products/products.service";
 
 @NgModule({
   declarations: [
@@ -26,7 +27,7 @@ import { AdComponent } from './ad/ad.component';
     FormsModule,
     HttpModule
   ],
-  providers: [],
+  providers: [ProductsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
