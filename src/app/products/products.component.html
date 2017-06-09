@@ -23,9 +23,7 @@
     </div>
    <hr class="break">
     <div class="row" id="products">
-      <div class="col-md-4" *ngFor="let product of products">
-        <app-product [product]="product"></app-product>
-      </div>
+        <app-product [product]="product" *ngFor="let product of products"></app-product>
     </div>
   </div>
 

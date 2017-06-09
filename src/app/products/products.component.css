@@ -2,16 +2,21 @@
   height: 600px;
   overflow-y: scroll;
   padding: 10px;
-  margin: 5px;
+  margin: 0px;
+  background-color: #fff;
 }
 
 #container {
   text-align: center;
-  padding: 5px;
+  padding: 0px;
+  border-top: 1px #c3c9cd inset;
+  border-right: 1px #c3c9cd inset;
 }
 
 #heading {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: white;
+  background-color: #101010;
 }
 
 #sort-row {
@@ -24,5 +29,7 @@
 }
 
 #searchbar {
-  margin-bottom: 10px;
+  margin: 5px;
+  padding-right: 20px;
+  padding-left: 20px;
 }

@@ -1,4 +1,6 @@
 #product {
+  height: 430px;
+  overflow-y: hidden;
   text-align: center;
   align-content: center;
   padding: 10px;
@@ -6,9 +8,11 @@
   border: 5px;
 }
 
-#product-image {
-  max-height: 250px;
-  max-width: 200px;
+#product p {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
 }
 
 a, a:active, a:link, a:visited {
@@ -17,6 +21,11 @@ a, a:active, a:link, a:visited {
   text-decoration-style: initial;
   text-decoration-color: initial;
   color: #0066c0;
+}
+#product:hover {
+  background-color: whitesmoke;
+  border: 1px #c3c9cd solid;
+  border-radius: 10px;
 }
 
 .a-inline-block, .aok-inline-block {

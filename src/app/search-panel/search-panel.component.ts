@@ -8,7 +8,7 @@ import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
 export class SearchPanelComponent implements OnInit {
   price: number = 0;
   @ViewChild('inputPrice') inputPrice: ElementRef;
-  maxPrice: number = 500;
+  maxPrice: number = 1000;
   minPrice: number = 0;
 
   constructor() { }
