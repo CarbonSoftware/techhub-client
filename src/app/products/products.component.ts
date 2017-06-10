@@ -9,6 +9,7 @@ import {ProductsService} from "./products.service";
 })
 export class ProductsComponent implements OnInit, DoCheck {
   products: product[] = [];
+  productSelected: product;
   sortType: string = 'relevance';
 
   constructor(private productService: ProductsService) {
@@ -27,6 +28,14 @@ export class ProductsComponent implements OnInit, DoCheck {
 
   getProducts() {
     this.products = this.productService.getProducts();
+  }
+
+  onProductSelected(productEl: product) {
+    this.productSelected = productEl;
+  }
+
+  onResetClicked() {
+    this.productSelected = null;
   }
 
   ngOnInit() {

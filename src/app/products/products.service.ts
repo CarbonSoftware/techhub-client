@@ -16,7 +16,7 @@ export class ProductsService {
         `There’s no denying the Samsung Galaxy S8 is a stunning device, with a smooth glass front
          and back that’s easy to hold in one hand. The curved screen gives you loads of room to enjoy
           all your favourite apps, games and videos. And the Quad HD resolution means you’ll see every detail. `,
-        646, '../../../assets/img/samsung.jpg'),
+        646, '../../../assets/img/samsung.jpg', `cpu: adrino ram: 4gb res: 720px`),
       new product('second',
         `There’s no denying the Samsung Galaxy S8 is a stunning device, with a smooth glass front
          and back that’s easy to hold in one hand. The curved screen gives you loads of room to enjoy

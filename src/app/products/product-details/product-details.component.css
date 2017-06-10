@@ -1,0 +1,30 @@
+#container {
+  margin-top: 10px;
+  padding: 10px;
+  border-top: 1px #c3c9cd inset;
+  border-right: 1px #c3c9cd inset;
+
+}
+
+#image {
+  max-width: 350px;
+}
+
+#details {
+
+}
+
+#specs {
+  padding: 30px;
+  border-top: 1px #c3c9cd inset;
+}
+
+#productRow {
+  margin-top: 10px;
+  padding: 10px;
+}
+
+#specRow {
+  margin: 0px;
+  padding: 10px;
+}

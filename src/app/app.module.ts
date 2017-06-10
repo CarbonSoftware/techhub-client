@@ -12,6 +12,7 @@ import { ProductComponent } from './products/product/product.component';
 import { AdComponent } from './ad/ad.component';
 import {ProductsService} from "./products/products.service";
 import { PromoComponent } from './header/promo/promo.component';
+import { ProductDetailsComponent } from './products/product-details/product-details.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { PromoComponent } from './header/promo/promo.component';
     ProductsComponent,
     ProductComponent,
     AdComponent,
-    PromoComponent
+    PromoComponent,
+    ProductDetailsComponent
   ],
   imports: [
     BrowserModule,

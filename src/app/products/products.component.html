@@ -23,7 +23,13 @@
     </div>
    <hr class="break">
     <div class="row" id="products">
-        <app-product [product]="product" *ngFor="let product of products"></app-product>
+        <app-product *ngFor="let productEl of products"
+                     [product]="productEl" (productSelected)="onProductSelected(productEl)"
+        ></app-product>
     </div>
+   <app-product-details [product]="productSelected" *ngIf="productSelected; else details"></app-product-details>
+   <ng-template #details>
+     <p>please select a product</p>
+   </ng-template>
   </div>
 

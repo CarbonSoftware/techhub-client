@@ -1,0 +1,19 @@
+<div class="container-fluid" id="container">
+  <div class="row" id="productRow">
+    <div class="col-md-11">
+      <button class="btn btn-primary" (click)="reset()"><span class="glyphicon glyphicon-arrow-left"></span></button>
+      <div class="col-md-4" id="image">
+        <img class="img-responsive" src="{{product.imagePath}}" align="left">
+      </div>
+      <div class="col-md-7" id="details">
+        <h2>{{product.name}}</h2>
+        <p>{{product.description}}</p>
+      </div>
+    </div>
+  </div>
+  <div class="row" id="specRow">
+    <div class="col-md-11" id="specs">
+      <p>{{product.specs}}</p>
+    </div>
+  </div>
+</div>
