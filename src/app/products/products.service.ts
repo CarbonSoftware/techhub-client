@@ -3,15 +3,7 @@ import {product} from "./product.model";
 
 @Injectable()
 export class ProductsService {
-    products: product[];
-
-  constructor() {
-    this.products = this.getProducts();
-  }
-
-  //return array of products from the server
-  getProducts() {
-    return [
+    products: product[] = [
       new product('name',
         `There’s no denying the Samsung Galaxy S8 is a stunning device, with a smooth glass front
          and back that’s easy to hold in one hand. The curved screen gives you loads of room to enjoy
@@ -48,6 +40,14 @@ export class ProductsService {
       new product('13th', 'description of the product', 345, '../../../assets/img/samsung.jpg'),
       new product('16th', 'description of the product', 150, '../../../assets/img/samsung.jpg')
     ];
+
+  constructor() {
+    this.products = this.getProducts();
+  }
+
+  //return array of products from the server
+  getProducts() {
+    return this.products;
   }
 
   //make a GET Request to server to receive sorted list of products
@@ -70,8 +70,14 @@ export class ProductsService {
   }
 
   //make a GET Request to server to receive items searched for
-  search() {
-
+  search(value) {
+    const found: product[] = [];
+    for (let i = 0; i < this.products.length; i++) {
+      if(this.products[i].name === value) {
+        found.push(this.products[i]);
+      }
+    }
+    return found;
   }
 
 }
