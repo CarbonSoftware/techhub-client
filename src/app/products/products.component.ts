@@ -26,6 +26,9 @@ export class ProductsComponent implements OnInit, DoCheck {
 
   //let product service handle this
   search() {
+    console.log('product');
+    this.products = this.productService.getProducts();
+    console.log('sent product to service');
     this.products = this.productService.search(this.searchInput.nativeElement.value);
   }
 

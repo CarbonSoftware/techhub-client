@@ -2,9 +2,15 @@
 <div class="container-fluid" id="main-site">
   <app-authentication *ngIf="navigation === 'login'"></app-authentication>
   <div class="row" id="main" *ngIf="navigation === 'buy'">
-    <app-search-panel></app-search-panel>
-    <app-products></app-products>
+    <div class="col-md-2" id="searchComponent">
+      <app-search-panel></app-search-panel>
+    </div>
+    <div class="col-md-9" id="products">
+      <app-products></app-products>
+    </div>
+    <div class="col-md-1" id="ad">
       <app-ad></app-ad>
+    </div>
   </div>
 
 </div>

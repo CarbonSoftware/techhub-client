@@ -1,4 +1,4 @@
- <div class="col-md-9" id="container">
+ <div id="container">
    <div id="heading">
      <h2><strong> Products </strong></h2>
    </div>
@@ -7,7 +7,7 @@
      <div class="input-group-addon"><span>category <span class="caret"></span></span></div>
      <input class="form-control" type="text" #searchInput>
      <div class="input-group-btn">
-       <button class="btn btn-default" type="button">Search <span class="glyphicon glyphicon-search" (click)="search()"></span></button>
+       <button class="btn btn-default" type="button" (click)="search()">Search <span class="glyphicon glyphicon-search"></span></button>
      </div>
    </div>
    <hr class="break">

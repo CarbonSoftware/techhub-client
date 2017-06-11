@@ -70,13 +70,17 @@ export class ProductsService {
   }
 
   //make a GET Request to server to receive items searched for
-  search(value) {
+  search(value): product[] {
+    console.log(value + ' received at service');
     const found: product[] = [];
+    if (value === '') return this.getProducts();
+    console.log('not null')
     for (let i = 0; i < this.products.length; i++) {
       if(this.products[i].name === value) {
         found.push(this.products[i]);
       }
     }
+    console.log('return product array');
     return found;
   }
 
