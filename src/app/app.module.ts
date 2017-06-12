@@ -10,9 +10,10 @@ import { AuthenticationComponent } from './authentication/authentication.compone
 import { ProductsComponent } from './products/products.component';
 import { ProductComponent } from './products/product/product.component';
 import { AdComponent } from './ad/ad.component';
-import {ProductsService} from "./products/products.service";
+import {ProductsService} from "./shared/products.service";
 import { PromoComponent } from './header/promo/promo.component';
 import { ProductDetailsComponent } from './products/product-details/product-details.component';
+import { DropdownDirective } from './shared/dropdown/dropdown.directive';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { ProductDetailsComponent } from './products/product-details/product-deta
     ProductComponent,
     AdComponent,
     PromoComponent,
-    ProductDetailsComponent
+    ProductDetailsComponent,
+    DropdownDirective
   ],
   imports: [
     BrowserModule,

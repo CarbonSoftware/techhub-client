@@ -1,6 +1,6 @@
 import {Component, DoCheck, ElementRef, EventEmitter, OnInit, Output, ViewChild} from '@angular/core';
-import {product} from "./product.model";
-import {ProductsService} from "./products.service";
+import {product} from "../shared/product.model";
+import {ProductsService} from "../shared/products.service";
 
 @Component({
   selector: 'app-products',
@@ -14,10 +14,12 @@ export class ProductsComponent implements OnInit, DoCheck {
   @ViewChild('searchInput') searchInput: ElementRef;
   @Output() searchValue: EventEmitter<string> = new EventEmitter();
 
-  constructor(private productService: ProductsService) {
+  constructor(private productService: ProductsService) {}
+
+  ngOnInit() {
     //service will get products from database and inject them here
     this.getProducts();
-
+    this.sort();
   }
 
   sort() {
@@ -42,10 +44,6 @@ export class ProductsComponent implements OnInit, DoCheck {
 
   onResetClicked() {
     this.productSelected = null;
-  }
-
-  ngOnInit() {
-    this.sort();
   }
 
   ngDoCheck() {
