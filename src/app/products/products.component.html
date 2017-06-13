@@ -19,9 +19,9 @@
           Sort by <span class="caret"> </span>
         </button>
           <ul class="dropdown-menu dropdown-menu dropdown-menu-left">
-            <li><a role="button" class="dropdown-item" >Relevance</a></li>
-            <li><a role="button" class="dropdown-item" >Price: low to high</a></li>
-            <li><a role="button" class="dropdown-item" >Price: high to low</a></li>
+            <li><a role="button" class="dropdown-item" (click)="sort('relevance')">Relevance</a></li>
+            <li><a role="button" class="dropdown-item" (click)="sort('priceAscending')">Price: low to high</a></li>
+            <li><a role="button" class="dropdown-item" (click)="sort('priceDescending')" >Price: high to low</a></li>
           </ul>
       </div>
     </div>

@@ -1,9 +1,9 @@
-import { Injectable } from '@angular/core';
+import {EventEmitter, Injectable} from '@angular/core';
 import {product} from "./product.model";
 
 @Injectable()
 export class ProductsService {
-    products: product[] = [
+    private products: product[] = [
       new product('name',
         `There’s no denying the Samsung Galaxy S8 is a stunning device, with a smooth glass front
          and back that’s easy to hold in one hand. The curved screen gives you loads of room to enjoy
@@ -43,31 +43,15 @@ export class ProductsService {
 
   constructor() {
     this.products = this.getProducts();
+
   }
 
   //return array of products from the server
   getProducts() {
-    return this.products;
+    return this.products.slice();
   }
 
-  //make a GET Request to server to receive sorted list of products
-  sortByPrice(sortType: string): product[] {
-    console.log(sortType);
-    if (sortType === 'relevance') {
-      this.products.sort();
-    }else if (sortType === 'priceAscending') {
-      this.products.sort(function(a, b){
-        return b.price - a.price
-      });
-    }else if (sortType === 'priceDescending') {
-      this.products.sort(function(a, b) {
-        return a.price - b.price
-      });
-    } else {
-      console.log('error: ' + sortType + ' is not recognised');
-    }
-    return this.products;
-  }
+
 
   //make a GET Request to server to receive items searched for
   search(value): product[] {
