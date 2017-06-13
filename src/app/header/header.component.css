@@ -216,3 +216,10 @@
 .navigation-clean-button.navbar-inverse .action-button:hover {
   background:#269d9d;
 }
+
+.activeLink {
+  color: #fff;
+  -ms-transform: scale(2, 2); /* IE 9 */
+  -webkit-transform: scale(2, 2); /* Safari */
+  transform: scale(2, 2);
+}

@@ -1,43 +1,34 @@
 import {Component, DoCheck, ElementRef, EventEmitter, OnInit, Output, ViewChild} from '@angular/core';
-import {product} from "../shared/product.model";
+import {Product} from "../shared/product.model";
 import {ProductsService} from "../shared/products.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-products',
   templateUrl: './products.component.html',
   styleUrls: ['./products.component.css'],
 })
-export class ProductsComponent implements OnInit, DoCheck {
-  products: product[] = [];
-  productSelected: product;
+export class ProductsComponent implements OnInit {
+  products: Product[] = [];
+  productSelected: Product;
   @ViewChild('searchInput') searchInput: ElementRef;
-  @Output() searchValue: EventEmitter<string> = new EventEmitter();
 
-  constructor(private productService: ProductsService) {}
+  constructor(private productService: ProductsService, private router: Router) {}
 
   ngOnInit() {
-    //service will get products from database and inject them here
     this.getProducts();
-  }
-
-
-  //let product service handle this
-  search() {
-    console.log('product');
-    this.products = this.productService.getProducts();
-    console.log('sent product to service');
-    this.products = this.productService.search(this.searchInput.nativeElement.value);
+    this.productService.onProductSelect.subscribe(
+      (product: Product) => {
+        this.productSelected = product;
+      }
+    );
   }
 
   getProducts() {
     this.products = this.productService.getProducts();
   }
 
-  onProductSelected(productEl: product) {
-    this.productSelected = productEl;
-  }
-
-  sort(sortType: string): product[] {
+  sort(sortType: string): Product[] {
     console.log(sortType);
     if (sortType === 'relevance') {
       this.products.sort();
@@ -55,7 +46,20 @@ export class ProductsComponent implements OnInit, DoCheck {
     return this.products;
   }
 
-  ngDoCheck() {
+  //make a GET Request to server to receive items searched for
+  search(value): void {
+    const found: Product[] = [];
+    this.getProducts();
+    if (value === '') return;
+    console.log('not null');
+    for (let i = 0; i < this.products.length; i++) {
+      if(this.products[i].name === value) {
+        found.push(this.products[i]);
+      }
+    }
+    console.log('return Product array');
+    this.products = found;
   }
+
 
 }

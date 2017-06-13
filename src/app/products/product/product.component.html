@@ -1,11 +1,11 @@
+<div id="product">
+  <a class="link" id="link" (click)="onSelected()">
+    <img class="img-responsive img-thumbnail a-inline-block aok-inline-block" [src]=item.imagePath id="product-image"
+         height="200px">
 
-  <div id="product">
-    <a class="link" href="#" id="link" (click)="onSelected()">
-      <img class="img-responsive img-thumbnail a-inline-block aok-inline-block" [src]=item.imagePath id="product-image" height="200px">
-
-      <h4>{{ item.name }}</h4>
-      <p>{{ item.description }}</p>
-      <br>
-      <p>price: {{ item.price }}</p>
-    </a>
-  </div>
+    <h4>{{ item.name }}</h4>
+    <p>{{ item.description }}</p>
+    <br>
+    <p>price: {{ item.price }}</p>
+  </a>
+</div>

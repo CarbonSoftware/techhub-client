@@ -1,5 +1,7 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
-import {product} from "../../shared/product.model";
+import {Product} from "../../shared/product.model";
+import {ProductsService} from "../../shared/products.service";
+import {ActivatedRoute, Router} from "@angular/router";
 
 @Component({
   selector: 'app-product-details',
@@ -7,16 +9,18 @@ import {product} from "../../shared/product.model";
   styleUrls: ['./product-details.component.css']
 })
 export class ProductDetailsComponent implements OnInit {
-  @Input() product: product;
-  @Output() onReset: EventEmitter<any> = new EventEmitter();
+  product: Product;
 
-  constructor() { }
-
-  ngOnInit() {
+  constructor(private productService: ProductsService,
+              private router: Router) {
   }
 
-  reset() {
-    this.product = null;
+  ngOnInit() {
+    this.product = this.productService.productSelected;
+  }
+
+  back() {
+    this.router.navigate(['/buy']);
   }
 
 }

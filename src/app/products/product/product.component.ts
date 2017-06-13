@@ -1,5 +1,7 @@
-import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
-import {product} from "../../shared/product.model";
+import {Component, Input, OnInit} from '@angular/core';
+import {Product} from "../../shared/product.model";
+import {ProductsService} from "../../shared/products.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-product',
@@ -7,17 +9,17 @@ import {product} from "../../shared/product.model";
   styleUrls: ['./product.component.css']
 })
 export class ProductComponent implements OnInit {
-  @Input('product') item: product;
-  @Output() productSelected: EventEmitter<any> = new EventEmitter();
+  @Input('product') item: Product;
 
-  constructor() { }
+  constructor(private productService: ProductsService, private router: Router) { }
 
   ngOnInit() {
   }
 
   onSelected() {
-    console.log('onselected');
-    this.productSelected.emit(null);
+    this.productService.onProductSelect.emit(this.item);
+    console.log('product: ' + this.item.imagePath);
+    this.router.navigate(['/buy', 'product', this.item.id]);
   }
 
 }

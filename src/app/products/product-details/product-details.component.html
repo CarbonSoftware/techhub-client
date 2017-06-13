@@ -1,9 +1,9 @@
 <div class="container-fluid" id="container">
-  <div class="row" id="productRow">
+  <div class="row" id="productRow" #productDetails>
     <div class="col-md-11 col-sm-12">
-      <button class="btn btn-primary" (click)="reset()"><span class="glyphicon glyphicon-arrow-left"></span></button>
+      <button class="btn btn-primary" (click)="back()"><span class="glyphicon glyphicon-arrow-left"></span></button>
       <div class="col-md-4 col-sm-12" id="image">
-        <img class="img-responsive" src="{{product.imagePath}}" align="left">
+        <img class="img-responsive" [src]="product.imagePath" align="left">
       </div>
       <div class="col-md-7 col-sm-12" id="details">
         <h2>{{product.name}}</h2>

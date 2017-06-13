@@ -8,14 +8,20 @@
     </div>
     <div class="collapse navbar-collapse" id="navcol-1">
       <ul class="nav navbar-nav">
-        <li role="presentation"><a href="#" (click)="onSelect('buy')" >Buy</a></li>
-        <li role="presentation"><a href="#" (click)="onSelect('news')" >News</a></li>
+        <li role="presentation"
+            routerLinkActive="activeLink"
+            [routerLinkActiveOptions]="{exact: true}"
+        >
+          <a routerLink="/" >Buy</a>
+        </li>
+        <li role="presentation" routerLinkActive="activeLink"><a routerLink="/news" >News</a></li>
       </ul>
       <p class="navbar-text navbar-right actions">
-        <a class="navbar-link login" href="#" (click)="onSelect('login')">Log In</a>
+        <a class="navbar-link login" routerLinkActive="activeLink"
+           routerLink="/login">Log In</a>
         <a role="button" class="btn btn-defualt action-button" href="#" (click)="onSelect('signin')">Sign Up</a>
         </p>
     </div>
   </div>
 </nav>
-<app-promo *ngIf="nav === 'buy'"></app-promo>
+<app-promo *ngIf="routerLink == '/'"></app-promo>

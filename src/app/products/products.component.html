@@ -1,4 +1,7 @@
-<div id="container">
+<div class="col-md-2" id="searchComponent">
+  <app-search-panel></app-search-panel>
+</div>
+<div class="col-md-9" id="container">
   <div id="heading">
     <h2><strong> Products </strong></h2>
   </div>
@@ -7,7 +10,7 @@
     <div class="input-group-addon"><span>category <span class="caret"></span></span></div>
     <input class="form-control" type="text" #searchInput>
     <div class="input-group-btn">
-      <button class="btn btn-default" type="button" (click)="search()">Search <span
+      <button class="btn btn-default" type="button" (click)="search(searchInput.value)">Search <span
         class="glyphicon glyphicon-search"></span></button>
     </div>
   </div>
@@ -18,11 +21,11 @@
         <button class="btn btn-secondary dropdown-toggle" type="button">
           Sort by <span class="caret"> </span>
         </button>
-          <ul class="dropdown-menu dropdown-menu dropdown-menu-left">
-            <li><a role="button" class="dropdown-item" (click)="sort('relevance')">Relevance</a></li>
-            <li><a role="button" class="dropdown-item" (click)="sort('priceAscending')">Price: low to high</a></li>
-            <li><a role="button" class="dropdown-item" (click)="sort('priceDescending')" >Price: high to low</a></li>
-          </ul>
+        <ul class="dropdown-menu dropdown-menu dropdown-menu-left">
+          <li><a role="button" class="dropdown-item" (click)="sort('relevance')">Relevance</a></li>
+          <li><a role="button" class="dropdown-item" (click)="sort('priceAscending')">Price: low to high</a></li>
+          <li><a role="button" class="dropdown-item" (click)="sort('priceDescending')">Price: high to low</a></li>
+        </ul>
       </div>
     </div>
     <div class="col-xs-6">
@@ -34,13 +37,8 @@
     <div class="col-md-4 col-sm-6 col-xs-12" *ngFor="let productEl of products">
       <input type="checkbox" id="compare">
       <label for="compare">Compare</label>
-      <app-product [product]="productEl" (productSelected)="onProductSelected(productEl)"
-      ></app-product>
+      <app-product [product]="productEl"></app-product>
     </div>
   </div>
-  <app-product-details [product]="productSelected" *ngIf="productSelected; else details"></app-product-details>
-  <ng-template #details>
-    <p>please select a product</p>
-  </ng-template>
 </div>
 

@@ -1,18 +1,11 @@
-<app-header (navSelected)="onNavigate($event)"></app-header>
+<app-header></app-header>
 <div class="container-fluid" id="main-site">
-  <app-authentication *ngIf="navigation === 'login'"></app-authentication>
-  <div class="row" id="main" *ngIf="navigation === 'buy'">
-    <div class="col-md-2" id="searchComponent">
-      <app-search-panel></app-search-panel>
-    </div>
-    <div class="col-md-9" id="products">
-      <app-products></app-products>
-    </div>
+  <div class="row" id="main">
+    <router-outlet></router-outlet>
     <div class="col-md-1" id="ad">
       <app-ad></app-ad>
     </div>
   </div>
-
 </div>
 <div class="footer-dark">
   <footer>
