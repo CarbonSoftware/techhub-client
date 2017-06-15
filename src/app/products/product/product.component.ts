@@ -18,8 +18,8 @@ export class ProductComponent implements OnInit {
 
   onSelected() {
     this.productService.onProductSelect.emit(this.item);
-    console.log('product: ' + this.item.imagePath);
-    this.router.navigate(['/buy', 'product', this.item.id]);
+    this.router.navigate(['product', this.item.id],
+      {queryParams: {name: this.item.name}, fragment: 'token'});
   }
 
 }

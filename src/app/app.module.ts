@@ -16,13 +16,19 @@ import { PromoComponent } from './header/promo/promo.component';
 import { ProductDetailsComponent } from './products/product-details/product-details.component';
 import { DropdownDirective } from './shared/dropdown/dropdown.directive';
 import { NewsComponent } from './news/news.component';
+import { UserComponent } from './user/user.component';
+import {UserService} from "./shared/user.service";
+import { ArticleComponent } from './news/article/article.component';
 
 const appRoutes: Routes = [
   { path: '', component: ProductsComponent },
-  { path: 'buy', component: ProductsComponent },
-  { path: 'buy/product/:id', component: ProductDetailsComponent },
+  { path: 'buy', component: ProductsComponent},
+  { path: 'product/:id', component: ProductDetailsComponent },
   { path: 'login', component: AuthenticationComponent },
-  { path: 'news', component: NewsComponent }
+  { path: 'news', component: NewsComponent, children: [
+    {path: 'articles/:title', component: ArticleComponent}
+  ]},
+  { path: 'users/:id/:name', component: UserComponent}
 ];
 
 @NgModule({
@@ -37,7 +43,9 @@ const appRoutes: Routes = [
     PromoComponent,
     ProductDetailsComponent,
     DropdownDirective,
-    NewsComponent
+    NewsComponent,
+    UserComponent,
+    ArticleComponent
   ],
   imports: [
     BrowserModule,
@@ -45,7 +53,7 @@ const appRoutes: Routes = [
     HttpModule,
     RouterModule.forRoot(appRoutes)
   ],
-  providers: [ProductsService],
+  providers: [ProductsService, UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
