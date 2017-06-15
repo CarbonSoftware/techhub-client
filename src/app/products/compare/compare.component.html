@@ -1,0 +1,286 @@
+<div class="container-fluid" id="container">
+  <button class="btn btn-primary" (click)="back()"><span class="glyphicon glyphicon-arrow-left"></span></button>
+
+  <div class="row" id="products[0]Row">
+
+    <div class="col-md-6" id="products[0]1">
+      <img class="img-responsive" [src]="products[0].imagePath" align="left">
+      <h2>{{products[0].name}}</h2>
+      <p>{{products[0].description}}</p>
+    </div>
+
+    <div class="col-md-6" id="products[0]2">
+      <img class="img-responsive" [src]="products[1].imagePath" align="left">
+      <h2>{{products[1].name}}</h2>
+      <p>{{products[1].description}}</p>
+    </div>
+
+  </div>
+
+  <!--Specification table-->
+  <div class="row" id="specRow">
+    <div class="col-md-6 col-sm-" id="specs">
+      <table class="table table-striped table-responsive table-hover">
+        <thead>
+        <tr>
+          <th>#</th>
+          <th colspan="2">{{products[0].name}}</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <th scope="row"><strong>NETWORK</strong></th>
+          <th>Technology</th>
+          <td>{{products[0].specs.network}}</td>
+        </tr>
+
+        <tr>
+          <th scope="row" rowspan="2"><strong>LAUNCH</strong></th>
+          <th>Announced</th>
+          <td>{{products[0].specs.launch[0]}}</td>
+        </tr>
+        <tr>
+          <th>Launch</th>
+          <td>{{products[0].specs.launch[1]}}</td>
+        </tr>
+
+        <tr>
+          <th scope="row" rowspan="6"><strong>BODY</strong></th>
+          <th>Dimensions</th>
+          <td>{{products[0].specs.body[0]}}</td>
+        </tr>
+        <tr>
+          <th>Weight</th>
+          <td>{{products[0].specs.body[1]}}</td>
+        </tr>
+        <tr>
+          <th>Build</th>
+          <td>{{products[0].specs.body[2]}}</td>
+        </tr>
+        <tr>
+          <th>SIM</th>
+          <td>{{products[0].specs.body[3]}}</td>
+        </tr>
+        <tr>
+          <th rowspan="2">Other</th>
+          <td rowspan="2">
+            {{products[0].specs.body[4]}}
+          </td>
+        </tr>
+        <br>
+
+        <tr>
+          <th scope="row" rowspan="8"><strong>DISPALY</strong></th>
+          <th>Type</th>
+          <td>{{products[0].specs.display[0]}}</td>
+        </tr>
+        <tr>
+          <th>Size</th>
+          <td>{{products[0].specs.display[1]}}</td>
+        </tr>
+        <tr>
+          <th>Resolution</th>
+          <td>{{products[0].specs.display[2]}}</td>
+        </tr>
+        <tr>
+          <th>Multitouch</th>
+          <td>{{products[0].specs.display[3]}}</td>
+        </tr>
+        <tr>
+          <th>Protection</th>
+          <td>{{products[0].specs.display[4]}}</td>
+        </tr>
+        <tr>
+          <th rowspan="3">Other</th>
+          <td rowspan="3">
+            {{products[0].specs.display[5]}}<br>
+            - Always-on display<br>
+            - TouchWiz UI
+          </td>
+        </tr>
+        <br>
+
+        <tr></tr>
+
+        <tr>
+          <th scope="row" rowspan="7"><strong>PLATFORM</strong></th>
+          <th>OS</th>
+          <td>Andriod 7.0 (Nougat)</td>
+        </tr>
+        <tr>
+          <th rowspan="2">Chipset</th>
+          <td rowspan="2">{{products[0].specs.platform[0]}}<br>
+            Qualcomm MSM8998 Snapdragon 835 - USA & China
+          </td>
+        </tr>
+        <br>
+        <tr>
+          <th rowspan="2">CPU</th>
+          <td rowspan="2">{{products[0].specs.platform[1]}}<br>
+            Octa-core (4x2.35 GHz Kryo & 4x1.9 GHz Kryo) - USA & China
+          </td>
+        </tr>
+        <br>
+        <tr>
+          <th rowspan="2">GPU</th>
+          <td rowspan="2">{{products[0].specs.platform[2]}}<br>
+            Adreno 540 - USA & China
+          </td>
+        </tr>
+
+        <br>
+
+        <tr>
+          <th scope="row" rowspan="3"><strong>MEMORY</strong></th>
+          <th rowspan="2">Card slot</th>
+          <td>{{products[0].specs.memory[0]}}<br>
+            awddawdad
+          </td>
+        </tr>
+        <br>
+        <tr>
+          <th>Internal</th>
+          <td>{{products[0].specs.memory[1]}}</td>
+        </tr>
+
+        <br>
+
+        <tr>
+          <th scope="row" rowspan="5"><strong>CAMERA</strong></th>
+          <th>Primary</th>
+          <td>{{products[0].specs.camera[0]}}</td>
+        </tr>
+        <tr>
+          <th>Features</th>
+          <td>{{products[0].specs.camera[1]}}</td>
+        </tr>
+        <tr>
+          <th>Video</th>
+          <td>{{products[0].specs.camera[2]}}</td>
+        </tr>
+        <tr>
+          <th>Secondary</th>
+          <td>{{products[0].specs.camera[2]}}</td>
+        </tr>
+
+        </tbody>
+      </table>
+    </div>
+
+    <div class="col-md-6 col-sm-" id="specs">
+      <table class="table table-striped table-responsive table-hover">
+        <thead>
+        <tr>
+          <th colspan="2">{{products[1].name}}</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>{{products[1].specs.network}}</td>
+        </tr>
+
+        <tr>
+          <td>{{products[1].specs.launch[0]}}</td>
+        </tr>
+        <tr>
+          <td>{{products[1].specs.launch[1]}}</td>
+        </tr>
+
+        <tr>
+          <td>{{products[1].specs.body[0]}}</td>
+        </tr>
+        <tr>
+          <td>{{products[1].specs.body[1]}}</td>
+        </tr>
+        <tr>
+          <td>{{products[1].specs.body[2]}}</td>
+        </tr>
+        <tr>
+          <td>{{products[1].specs.body[3]}}</td>
+        </tr>
+        <tr>
+          <td rowspan="2">
+            {{products[1].specs.body[4]}}
+          </td>
+        </tr>
+        <br>
+
+        <tr>
+          <td>{{products[0].specs.display[0]}}</td>
+        </tr>
+        <tr>
+          <td>{{products[1].specs.display[1]}}</td>
+        </tr>
+        <tr>
+          <td>{{products[1].specs.display[2]}}</td>
+        </tr>
+        <tr>
+          <td>{{products[1].specs.display[3]}}</td>
+        </tr>
+        <tr>
+          <td>{{products[1].specs.display[4]}}</td>
+        </tr>
+        <tr>
+          <td rowspan="3">
+            {{products[1].specs.display[5]}}<br>
+            - Always-on display<br>
+            - TouchWiz UI
+          </td>
+        </tr>
+        <br>
+
+        <tr></tr>
+
+        <tr>
+          <td>{{products[1].specs.platform[0]}}</td>
+        </tr>
+        <tr>
+          <td rowspan="2">{{products[1].specs.platform[1]}}<br>
+            Qualcomm MSM8998 Snapdragon 835 - USA & China
+          </td>
+        </tr>
+        <br>
+        <tr>
+          <td rowspan="2">{{products[1].specs.platform[2]}}<br>
+            Octa-core (4x2.35 GHz Kryo & 4x1.9 GHz Kryo) - USA & China
+          </td>
+        </tr>
+        <br>
+        <tr>
+          <td rowspan="2">{{products[1].specs.platform[3]}}<br>
+            Adreno 540 - USA & China
+          </td>
+        </tr>
+
+        <br>
+
+        <tr>
+          <td>{{products[1].specs.memory[0]}}<br>
+            awddawdad
+          </td>
+        </tr>
+        <br>
+        <tr>
+          <td>{{products[1].specs.memory[1]}}</td>
+        </tr>
+
+        <br>
+
+        <tr>
+          <td>{{products[1].specs.camera[0]}}</td>
+        </tr>
+        <tr>
+          <td>{{products[1].specs.camera[1]}}</td>
+        </tr>
+        <tr>
+          <td>{{products[1].specs.camera[2]}}</td>
+        </tr>
+        <tr>
+          <td>{{products[1].specs.camera[2]}}</td>
+        </tr>
+
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

@@ -19,11 +19,13 @@ import { NewsComponent } from './news/news.component';
 import { UserComponent } from './user/user.component';
 import {UserService} from "./shared/user.service";
 import { ArticleComponent } from './news/article/article.component';
+import { CompareComponent } from './products/compare/compare.component';
 
 const appRoutes: Routes = [
   { path: '', component: ProductsComponent },
   { path: 'buy', component: ProductsComponent},
   { path: 'product/:id', component: ProductDetailsComponent },
+  { path: 'product/compare/:id', component: CompareComponent },
   { path: 'login', component: AuthenticationComponent },
   { path: 'news', component: NewsComponent, children: [
     {path: 'articles/:title', component: ArticleComponent}
@@ -45,7 +47,8 @@ const appRoutes: Routes = [
     DropdownDirective,
     NewsComponent,
     UserComponent,
-    ArticleComponent
+    ArticleComponent,
+    CompareComponent
   ],
   imports: [
     BrowserModule,

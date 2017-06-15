@@ -1,5 +1,5 @@
-import {Component, Input, OnInit} from '@angular/core';
-import {Product} from "../../shared/product.model";
+import {Component, ElementRef, EventEmitter, Input, OnInit, Output, ViewChild} from '@angular/core';
+import {Product} from "../../shared/models/products/product.model";
 import {ProductsService} from "../../shared/products.service";
 import {Router} from "@angular/router";
 

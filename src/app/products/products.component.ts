@@ -1,5 +1,5 @@
 import {Component, DoCheck, ElementRef, EventEmitter, OnInit, Output, ViewChild} from '@angular/core';
-import {Product} from "../shared/product.model";
+import {Product} from "../shared/models/products/product.model";
 import {ProductsService} from "../shared/products.service";
 import {Router} from "@angular/router";
 
@@ -9,19 +9,14 @@ import {Router} from "@angular/router";
   styleUrls: ['./products.component.css'],
 })
 export class ProductsComponent implements OnInit {
-  products: Product[] = [];
-  productSelected: Product;
+  private products: Product[] = [];
   @ViewChild('searchInput') searchInput: ElementRef;
 
   constructor(private productService: ProductsService, private router: Router) {}
 
   ngOnInit() {
     this.getProducts();
-    this.productService.onProductSelect.subscribe(
-      (product: Product) => {
-        this.productSelected = product;
-      }
-    );
+    this.productService.clearCompare();
   }
 
   getProducts() {
@@ -59,6 +54,15 @@ export class ProductsComponent implements OnInit {
     }
     console.log('return Product array');
     this.products = found;
+  }
+
+  compare() {
+    //this.productService.onProductCompare.emit(this.item);
+    this.router.navigate(['product', 'compare', this.productService.productsCompare[1].name]);
+  }
+
+  onChecked(product: Product) {
+
   }
 
 

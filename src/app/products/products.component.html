@@ -29,15 +29,14 @@
       </div>
     </div>
     <div class="col-xs-6">
-      <button class="btn btn-primary">Compare</button>
+      <button class="btn btn-primary" (click)="compare()">Compare</button>
     </div>
   </div>
   <hr class="break">
   <div class="row" id="products">
     <div class="col-md-4 col-sm-6 col-xs-12" *ngFor="let productEl of products">
-      <input type="checkbox" id="compare">
-      <label for="compare">Compare</label>
-      <app-product [product]="productEl"></app-product>
+      <label><input type="checkbox" name="compare" (change)="onChecked(productEl)"> Compare</label>
+      <app-product [product]="productEl" isSelected=""></app-product>
     </div>
   </div>
 </div>
