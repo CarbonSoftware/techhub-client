@@ -58,11 +58,11 @@ export class ProductsComponent implements OnInit {
 
   compare() {
     //this.productService.onProductCompare.emit(this.item);
-    this.router.navigate(['product', 'compare', this.productService.productsCompare[1].name]);
+    this.router.navigate(['compare']);
   }
 
   onChecked(product: Product) {
-
+    this.productService.onProductCompare.emit(product);
   }
 
 

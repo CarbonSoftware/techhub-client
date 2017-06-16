@@ -18,8 +18,8 @@ export class CompareComponent implements OnInit {
   }
 
   back() {
+    this.router.navigate(['products']);
     this.productService.clearCompare();
-    this.router.navigate(['buy']);
   }
 
 }

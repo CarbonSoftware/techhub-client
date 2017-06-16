@@ -23,9 +23,9 @@ import { CompareComponent } from './products/compare/compare.component';
 
 const appRoutes: Routes = [
   { path: '', component: ProductsComponent },
-  { path: 'buy', component: ProductsComponent},
+  { path: 'products', component: ProductsComponent},
   { path: 'product/:id', component: ProductDetailsComponent },
-  { path: 'product/compare/:id', component: CompareComponent },
+  { path: 'compare', component: CompareComponent },
   { path: 'login', component: AuthenticationComponent },
   { path: 'news', component: NewsComponent, children: [
     {path: 'articles/:title', component: ArticleComponent}

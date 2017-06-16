@@ -20,7 +20,7 @@ export class ProductDetailsComponent implements OnInit {
   }
 
   back() {
-    this.router.navigate(['/buy']);
+    this.router.navigate(['products']);
   }
 
 }

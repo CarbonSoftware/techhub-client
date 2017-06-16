@@ -18,8 +18,7 @@ export class ProductComponent implements OnInit {
 
   onSelected() {
     this.productService.onProductSelect.emit(this.item);
-    this.router.navigate(['product', this.item.id],
-      {queryParams: {name: this.item.name}, fragment: 'token'});
+    this.router.navigate(['product', this.item.id]);
   }
 
 }
