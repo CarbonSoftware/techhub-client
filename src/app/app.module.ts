@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
-import {RouterModule, Routes} from "@angular/router";
+import {AppRoutingModule} from "./app-routing.module";
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
@@ -20,18 +20,9 @@ import { UserComponent } from './user/user.component';
 import {UserService} from "./shared/user.service";
 import { ArticleComponent } from './news/article/article.component';
 import { CompareComponent } from './products/compare/compare.component';
-
-const appRoutes: Routes = [
-  { path: '', component: ProductsComponent },
-  { path: 'products', component: ProductsComponent},
-  { path: 'product/:id', component: ProductDetailsComponent },
-  { path: 'compare', component: CompareComponent },
-  { path: 'login', component: AuthenticationComponent },
-  { path: 'news', component: NewsComponent, children: [
-    {path: 'articles/:title', component: ArticleComponent}
-  ]},
-  { path: 'users/:id/:name', component: UserComponent}
-];
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import {AuthService} from "./auth-service.service";
+import {AuthGuard} from "./user/auth-gaurd.service";
 
 @NgModule({
   declarations: [
@@ -48,15 +39,16 @@ const appRoutes: Routes = [
     NewsComponent,
     UserComponent,
     ArticleComponent,
-    CompareComponent
+    CompareComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
-    RouterModule.forRoot(appRoutes)
+    AppRoutingModule
   ],
-  providers: [ProductsService, UserService],
+  providers: [ProductsService, UserService, AuthService, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
